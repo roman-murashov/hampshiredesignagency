@@ -1,0 +1,1383 @@
+*,
+*:before,
+*:after
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+body
+  background-color: $white
+  font-family: $font-family
+  font-size: 12px
+  color: #444
+  margin: 0
+  padding: 0
+  cursor: default
+
+img
+  border: 0
+
+form,
+textarea
+  margin: 0
+  padding: 0
+  font-family: $font-family
+  font-size: 11px
+
+ul,
+li,
+pre,
+form,
+html,
+p,
+blockquote,
+fieldset,
+input
+  margin: 0
+  padding: 0
+  font-family: $font-family
+
+h1
+  color: #666
+  margin: 0
+  padding: 0
+  font-weight: 300
+  line-height: 100%
+  font-family: $font-family
+
+.fadeout
+  +transition(all 500ms ease 0s)
+  opacity: 0
+  &.fadein
+    opacity: 1
+  &.slideright
+    left: -200px !important
+  &.fadein-slide
+    opacity: 1
+    left: 0 !important
+
+h2,
+h3,
+h4,
+h5,
+h6
+  color: #888888
+  margin: 0
+  padding: 0
+  font-weight: 300
+  line-height: 125%
+  font-family: $font-family
+
+p
+  color: #999
+  line-height: 150%
+  font-weight: 300
+
+strong
+  font-weight: bold
+
+hr
+  margin: 10px 0
+  border: 0
+  border-top: 1px dashed #ccc
+
+a
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active
+    color: $orange
+    text-decoration: none
+
+legend
+  display: none
+
+fieldset
+  border: none
+
+.gutter
+  padding-left: 10px
+  padding-right: 10px
+  box-sizing: border-box
+
+.gutter-medium
+  padding-left: 20px
+  padding-right: 20px
+  box-sizing: border-box
+
+.gutter-bottom-medium
+  padding-bottom: 20px
+  box-sizing: border-box
+
+.gutter-large
+  padding-left: 40px
+  padding-right: 40px
+  box-sizing: border-box
+
+.gutter-bottom-large
+  padding-bottom: 40px
+  box-sizing: border-box
+
+.gutter-top-large
+  padding-top: 40px
+  box-sizing: border-box
+
+.loader-container
+  position: absolute
+  top: 50%
+  left: 50%
+  +transform(translate(-50%,-50%))
+  width: 120px
+  height: 120px
+  z-index: 10
+  background: transparent url(images/logo-colour.svg) center center no-repeat
+  background-size: 50%
+  +transition(all 0.25s ease 0s)
+  +border-radius(50%)
+
+.loader
+  border: 10px solid $light-grey
+  border-top: 10px solid $magenta
+  +border-radius(50%)
+  width: 120px
+  height: 120px
+  +animation(spin 1.5s linear infinite)
+  opacity: 1
+  +transition(all 0.25s ease 0s)
+
+.loader-stop
+  opacity: 0
+
+@keyframes spin
+  0%
+    +transform(rotate(0deg))
+  100%
+    +transform(rotate(360deg))
+
+.pagewidth
+  width: 1000px
+  margin: 0 auto
+
+.cf
+  &:before,
+  &:after
+    content: " "
+    display: table
+    clear: both
+
+header
+  background-color: rgba(0,0,0,0)
+  position: fixed
+  z-index: 999
+  width: 100%
+  height: 90px
+  top: 0
+  +transition(all 0.25s ease 0s)
+  border-bottom: 1px solid rgba(255,255,255,.2)
+
+  #headercontainer
+    position: relative
+    height: 90px
+    width: 98%
+    margin: 0 auto
+
+    #logo
+      position: absolute
+      top: 7px
+      left: 0
+      height: 75px
+      width: 100px
+      background-image: url(images/logo-white-colour.svg)
+      background-size: 100px 75px
+      +transition(all 0.15s ease-in-out 0s)
+      span
+        display: none
+
+    #phonenumber
+      position: absolute
+      right: 0
+      top: 63px
+      .tel
+        margin-left: 20px
+      p
+        color: #999
+        font-size: 20px
+        margin: 0
+        padding: 0
+        a
+          color: #999
+
+    .phonenumber
+      color: rgba(255,255,255,.75)
+      font-size: 20px
+      margin: 5px 0
+      padding: 0
+      a
+        color: rgba(255,255,255,.75)
+
+  &.header-fade
+    background-color: rgba(255,255,255,.9)
+    height: 60px
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+    &:hover
+      opacity: 1
+
+    #headercontainer
+      .phonenumber
+        color: #999
+        a
+          color: #999
+
+    #phonenumber
+      display: none
+
+    #headercontainer
+      position: relative
+      height: 90px
+      width: 98%
+      margin: 0 auto
+      #logo
+        background-size: 58px 44px
+        background-image: url(images/logo-colour.svg)
+        height: 44px
+        width: 58px
+
+.loading
+  header
+    #headercontainer
+      #logo
+        background-image: none
+        +transition(all 0.25s ease 0s)
+
+.map
+  height: 50vh
+  width: 100%
+
+@-moz-keyframes bounce
+  0%, 20%, 50%, 80%, 100%
+    -moz-transform: translateY(0)
+    transform: translateY(0)
+  40%
+    -moz-transform: translateY(-20px)
+    transform: translateY(-20px)
+  60%
+    -moz-transform: translateY(-10px)
+    transform: translateY(-10px)
+
+@-webkit-keyframes bounce
+  0%, 20%, 50%, 80%, 100%
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+  40%
+    -webkit-transform: translateY(-20px)
+    transform: translateY(-20px)
+  60%
+    -webkit-transform: translateY(-10px)
+    transform: translateY(-10px)
+
+@keyframes bounce
+  0%, 20%, 50%, 80%, 100%
+    +transform(translateY(0))
+  40%
+    +transform(translateY(-20px))
+  60%
+    +transform(translateY(-10px))
+
+.arrow
+  position: absolute
+  bottom: 15%
+  left: 50%
+  margin-left: -20px
+  width: 40px
+  height: 40px
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=)
+  background-size: contain
+  &:hover
+    cursor: pointer
+
+.bounce
+  @include animation(bounce 2s infinite)
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12
+  float: left
+  box-sizing: border-box
+
+.col-1
+  width: 8.33333%
+.col-2
+  width: 16.6667%
+.col-3
+  width: 25%
+.col-4
+  width: 33.3333%
+.col-5
+  width: 41.6667%
+.col-6
+  width: 50%
+.col-7
+  width: 58.3333%
+.col-8
+  width: 66.6667%
+.col-9
+  width: 75%
+.col-10
+  width: 83.3333%
+.col-11
+  width: 91.6667%
+.col-12
+  width: 100%
+
+section
+  h2
+    font-size: 4em
+  h3
+    font-size: 2.5em
+  h4
+    font-size: 2em
+  .layout
+    .col-12
+      margin-top: 100px
+      .col-1, .col-2, .col-3, .col-5, .col-6, .col-7, .col-9, .col-10, .col-11
+        opacity: 0
+        +transition(500ms ease-in-out 0s)
+        +transform(translateY(200px))
+      .col-4
+        opacity: 0
+        +transition(750ms ease-in-out 0s)
+        +transform(translateY(300px))
+      .col-5
+        opacity: 0
+        +transition(1000ms ease-in-out 0s)
+        +transform(translateY(400px))
+      .col-7
+        opacity: 0
+        +transition(650ms ease-in-out 0s)
+        +transform(translateY(250px))
+      .col-8
+        opacity: 0
+        +transition(850ms ease-in-out 0s)
+        +transform(translateY(350px))
+      .col-9
+        opacity: 0
+        +transition(950ms ease-in-out 0s)
+        +transform(translateY(450px))
+      .col-12
+        margin-top: 0px
+        img
+          width: 100%
+        opacity: 0
+        +transition(950ms ease-in-out 0s)
+        +transform(translateY(450px))
+    img
+      width: 95%
+      border: 10px solid $white
+      box-shadow: 0px 0px 10px rgba(0,0,0,.25)
+    .no-border
+      img
+        border: 0px
+        box-shadow: none
+    .portfolio-animated
+      &.col-12
+        .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12
+          opacity: 1
+          +transform(translateY(0px))
+
+  &.full-page
+    background-attachment: scroll
+    background-size: cover
+    background-position: center center
+    position: relative
+    .container
+      height: 100vh
+      text-align: center
+      position: inherit
+      h2
+        text-align: center
+        position: absolute
+        top: 0
+        left: 0
+        bottom: auto
+        color: $white
+        background-color: rgba(0, 0, 0, .75)
+        padding: 30px
+        white-space: nowrap
+        font-size: 2.5em
+        margin: 0
+  &.portfolio
+  ul
+    width: 100%
+    li
+      display: inline-block
+      float: left
+      overflow: hidden
+      position: relative
+      +transition(all 0.5s ease-in-out 0s)
+      img
+        display: inline-block
+        +transition(all 0.5s ease-in-out 0s)
+        width: 100%
+        +transform(scale(1.02))
+        &:hover
+          +transform(scale(1.06))
+  &.banner-design
+    width: 100%
+    background-color: $light-grey
+    position: relative
+    background-size: cover
+    background-attachment: fixed
+    overflow: hidden
+    min-height: 100vh
+    background-position: center
+    &.text-light
+      .banner-intro
+        h1, p
+          color: $white
+          text-shadow: 0 1px 1px #666666
+    .banner-intro
+      top: 50%
+      +transform(translateY(-50%))
+      text-align: center
+      width: 100%
+      position: absolute
+      color: $white
+      h1, p
+        color: #666666
+        text-shadow: 0 1px 1px $white
+      h1
+        font-size: 4rem
+      p
+        font-size: 1.5rem
+      img
+        max-width: 25%
+        width: 25%
+
+  &.banner-contact
+    width: 100%
+    background-color: $light-grey
+    position: relative
+    background-size: cover
+    background-attachment: fixed
+    overflow: hidden
+    min-height: 300px
+    background-position: center
+    .banner-intro
+      top: 50%
+      +transform(translateY(-20%))
+      text-align: center
+      width: 100%
+      position: absolute
+      color: $white
+      h1, h2, h3, h4
+        color: $white
+      h1
+        font-size: 4rem
+        text-shadow: 0 1px 1px $black
+      p
+        color: $white
+        font-size: 1.5rem
+        text-shadow: 0 1px 1px $black
+
+  &.white
+    background-color: $white
+  &.light
+    background-color: #eee
+  &.dark
+    background-color: #282c34
+    h3,
+    h4,
+    p
+      color: #fff
+      text-shadow: 0 1px 1px #000
+    .button
+      a
+        border: 1px solid #fff
+        border-radius: 5px
+        color: #fff
+        display: inline-block
+        font-size: 1.15em
+        padding: 7px 15px
+        text-decoration: none
+        +transition(all 0.25s ease 0s)
+        background-color: rgba(255,255,255,.1)
+        text-shadow: 0 1px 1px #444
+        &:hover
+          background-color: rgba(255,255,255,.5)
+  &.grey
+    background-color: #eeeeee
+  &.brown
+    background-color: $brown
+  &.magenta
+    background-color: $magenta
+  &.orange
+    background-color: $orange
+  &.yellow
+    background-color: $yellow
+    h3
+      color: rgba(0,0,0,0.5)
+      text-shadow: 0 1px 1px rgba(255,255,255,.5)
+    p
+      color: rgba(0,0,0,0.5)
+  &.contact-us
+    .row
+      .container
+        padding: 0px
+        width: 100%
+        .col-6
+          float: right
+          &.address
+            float: left
+            position: absolute
+            top: 50%
+            +transform(translateY(-50%))
+  .container
+    margin: 0 auto
+    padding: 75px 0
+    width: 1000px
+    position: relative
+    p
+      font-size: 1rem
+      padding-bottom: 10px
+      &.services
+        border-top: 1px solid #ddd
+        padding: 20px 0
+        margin-top: 40px
+        i
+          margin-left: 20px
+          font-size: 1.2rem
+    h2
+      font-weight: 300
+      margin-bottom: 20px
+
+  &.who-we-are
+    background-color: $white
+    background-image: url(/userfiles/image/banners/banner-who-we-are-3.jpg)
+    background-repeat: no-repeat
+    padding-bottom: 440px
+    p
+      font-size: 1.15em
+      padding-bottom: 10px
+      color: #888888
+    h2
+      font-weight: 300
+      margin-bottom: 20px
+      color: #888888
+    h3
+      font-weight: 300
+      margin-bottom: 20px
+      color: #888888
+    .gutter-right
+      padding-right: 45px
+
+  &.service
+    p
+      font-size: 1.25em
+      color: #666
+      margin-top: 20px
+    .col-12
+      .col-4:nth-child(3n+4)
+        clear: left
+  &.background-attachment-fixed
+    background-attachment: fixed !important
+  &.sticky-bottom
+    h2
+      top: auto !important
+      bottom: 0 !important
+
+
+.testimonial
+  h2
+    color: #666
+    font-weight: 300
+  .col-4
+    padding: 0 20px
+  .col-12
+    margin-bottom: 40px
+  p
+    font-size: 1.25em
+    color: #666
+    margin-top: 20px
+  strong
+    display: block
+
+#service-print
+  background-image: url(/userfiles/image/banners/production-room-dark.jpg)
+  background-position: bottom center
+  background-size: cover
+  -webkit-background-size: cover
+  background-attachment: fixed
+  h4
+    a
+      color: #fff
+  .icon
+    background-color: pink
+    border-radius: 50%
+    display: inline-block
+    height: 100px
+    width: 100px
+    box-shadow: 0 1px 2px #999
+    background-size: cover
+  .talk-fade
+    opacity: 0
+    +transition(all 0.5s ease-in-out 0s)
+    &.is-showing
+      opacity: 1
+
+#service-design
+  .icon
+    background-color: lightblue
+    border-radius: 50%
+    display: inline-block
+    height: 100px
+    width: 100px
+    box-shadow: 0 1px 2px #999
+    background-size: cover
+  h4
+    a
+      color: #666
+  .talk-fade
+    opacity: 0
+    +transition(all 0.5s ease-in-out 0s)
+    &.is-showing
+      opacity: 1
+
+.entry
+  h3
+    font-weight: 700
+    font-size: 2.5em
+    color: #666
+  p
+    font-size: 1.25em
+    color: #666
+    margin-top: 20px
+  .col-6
+    opacity: 0
+    +transition(all 0.5s ease-in-out 0s)
+    &.design,
+    &.print
+      padding: 0 45px
+    &.is-showing
+      opacity: 1
+
+    .robin
+      position: absolute
+      right: 76px
+      bottom: 0
+
+  .icon
+    border-radius: 50%
+    color: $white
+    display: inline-block
+    font-size: 3em
+    height: 50px
+    line-height: 50px
+    margin: 0 auto 20px
+    text-transform: uppercase
+    width: 50px
+    box-shadow: 0 1px 2px #999
+
+  .design
+    .icon
+      background-color: $orange
+
+  .print
+    .icon
+      background-color: $magenta
+
+  .and
+    background-color: #eee
+    border: 1px solid #ccc
+    +border-radius(50%)
+    color: #ccc
+    font-size: 3em
+    font-weight: 300
+    height: 46px
+    left: 477px
+    line-height: 46px
+    position: absolute
+    text-align: center
+    top: 50%
+    +transform(translate(0px, -50%))
+    width: 46px
+    z-index: 99
+
+  .separator
+    background-color: #ccc
+    height: 50%
+    left: 500px
+    position: absolute
+    top: 50%
+    +transform(translate(0px, -50%))
+    width: 1px
+
+.top
+  background-color: rgba(0, 0, 0, 0.75)
+  bottom: 30px
+  color: $white !important
+  display: inline-block
+  font-size: 3em
+  line-height: 15px
+  opacity: 0
+  padding: 15px 25px 20px
+  position: fixed
+  right: -80px
+  transition: all 0.5s ease-in-out 0s
+  border-radius: 5px
+  border: 1px solid #333
+  &:hover
+    background-color: rgba(0, 0, 0, 1)
+  &.top-fade
+    opacity: 1
+    right: 30px
+
+.button
+  a
+    border: 2px solid #666
+    border-radius: 5px
+    color: #666
+    font-size: 1.15em
+    padding: 10px 20px
+    text-decoration: none
+    +transition(all 0.25s ease 0s)
+    display: inline-block
+    text-shadow: 0 1px 1px $white
+    position: relative
+    &:after
+      content: "\f105"
+      font-family: "fontawesome"
+      margin-left: 10px
+    &:hover
+      background-color: #666666
+      color: $white
+      text-shadow: 0 1px 1px #444
+  &.button-previous
+    a
+      white-space: nowrap
+      &:after
+        content: ""
+        margin-left: 0px
+      &:before
+        content: "\f104"
+        font-family: "fontawesome"
+        margin-right: 10px
+  &.button-design
+    a
+      &:hover
+        background-color: $orange
+        border: 1px solid $orange
+  &.button-print
+    a
+      &:hover
+        background-color: $magenta
+        border: 1px solid $magenta
+
+.center
+  text-align: center
+  h3, p
+    text-align: center
+  h3
+    text-shadow: 0 1px 1px $white
+.right
+  text-align: right
+  h3, p
+    text-align: right
+.left
+  text-align: left
+  h3, p
+    text-align: left
+.col
+  float: left
+  width: 49%
+  padding: 0
+  p
+    margin-right: 10px
+  h3
+    font-weight: bold
+    font-size: 12px
+    line-height: 100%
+
+footer
+  background-color: #282c34
+  .footer-nav
+    border-top: 1px solid #363636
+    padding-top: 20px
+    position: relative
+    margin-top: 20px
+    text-align: center
+    ul
+      li
+        list-style: none
+        display: inline-block
+        text-transform: lowercase
+        padding-right: 10px
+        margin-right: 10px
+        border-right: 1px solid #363636
+        font-size: 1.25em
+        a
+          color: #999999
+          text-decoration: none
+          margin: 0
+          height: 35px
+  .container
+    padding: 50px 0 30px 0
+    margin: 0
+    clear: both
+    width: 1024px
+    margin: 0 auto
+    p
+      margin: 0 0 10px 0
+      padding: 0
+      color: #777777
+      text-align: center
+      font-size: 1.25em
+    h5
+      margin: 0
+      padding: 0 0 5px 0
+      font-size: 12px
+      font-weight: bold
+    a
+      &,
+      &:link
+        color: #999999
+        text-decoration: none
+        font-weight: normal
+      &:hover
+        text-decoration: underline
+        color: #cccccc
+
+    ul
+      margin-bottom: 30px
+      text-align: center
+      li
+        list-style: none
+        display: inline-block
+        text-transform: lowercase
+        padding: 0 10px 0 0
+        margin-right: 10px
+        border-right: 1px solid #999
+        &.last
+          border-right: none
+        a
+          &,
+          &:link,
+          &:visited
+            color: #999999
+            text-decoration: none
+            margin: 0
+            font-weight: normal
+            height: 35px
+          &:hover,
+          &:active
+            color: #cccccc
+            cursor: pointer
+            text-decoration: underline
+
+.services-col
+  width: 130px
+  padding: 0
+  margin: 0 10px 5px 0
+  float: left
+
+.services-col-right
+  width: 119px
+  padding: 0
+  margin: 0 0 5px 0
+  float: left
+
+#services
+  padding: 0
+  margin: 0
+  width: 1000px
+  margin: 0 auto
+  position: relative
+  h3
+    margin-bottom: 30px
+    font-size: 3.5em
+    font-weight: 300
+    color: #ccc
+  ul
+    color: #ccc
+    li
+      list-style: none
+      text-decoration: none
+      margin: 0
+      text-transform: uppercase
+      width: 118px
+      border-top: 2px solid #666
+      a
+        &,
+        &:link,
+        &:visited
+          display: block
+          text-decoration: none
+          color: #ccc
+          padding: 10px 5px
+          font-weight: bold
+        &:hover,
+        &:active
+          color: #fff
+          cursor: pointer
+          background-color: $orange
+        &#selected
+          &,
+          &:link
+            color: #fff
+            background-color: $orange
+    ul
+      padding: 0
+      margin: 0 0 10px 0
+      li
+        list-style: none
+        text-decoration: none
+        margin: 0
+        display: block
+        text-transform: lowercase !important
+        border: none
+        width: 118px
+        a
+          &,
+          &:link,
+          &:visited
+            display: block
+            text-decoration: none
+            color: #999
+            padding: 3px
+            font-weight: normal
+            background: none !important
+            border: none
+          &:hover,
+          &:active
+            color: $orange
+            cursor: pointer
+            background-color: #e5f4fa
+
+.clear
+  clear: both
+  height: 0
+  font-size: 0px
+
+.hidden,
+.skip
+  display: none
+
+.quote-icon
+  float: right
+  position: relative
+  top: -10px
+  right: -10px
+
+input[type="text"],
+input[type="password"],
+textarea
+  padding: 5px 4px
+  border: 1px solid #ccc
+  +border-radius(4px)
+  border: 1px solid #ccc
+
+input[type="text"]:focus,
+textarea:focus
+  border: 1px solid #ababab
+  outline: none
+
+.bg-center-bottom
+  background-position: center bottom
+
+.bg-cover
+  background-size: cover
+  background-repeat: no-repeat
+
+/* Selecting text background */
+
+/* Safari */
+::selection
+  background: #444
+  color: #fff
+
+/* Firefox */
+::-moz-selection
+  background: #444
+  color: $white
+
+/* search */
+
+#search
+  float: left
+  margin-left: 10px
+  padding: 5px
+  border-bottom: 1px solid #ccc
+
+  .search-button
+    border: none
+    background-color: #666
+    color: #fff
+    padding: 0 5px
+    margin: 0
+    height: 25px
+    +border-radius(5px)
+
+  input[type='text']
+    border: 0
+    padding: 2px
+    margin: 0
+    width: 150px
+    height: 24px
+    top: -1px
+    background: none
+    color: #666
+    font-size: 11px
+    &:focus
+      color: #666
+      font-style: normal
+
+#toolbar-wrapper
+  height: 45px
+  width: 100%
+
+#toolbar
+  margin: 0 auto
+  width: 1000px
+
+.header-fade
+  #action
+    top: 10px
+
+#action
+  position: absolute
+  top: 27px
+  right: 130px
+  +transition(all 0.15s ease-in-out 0s)
+  p
+    float: left
+  .social
+    margin: 5px 0 0 10px
+  a
+    +transition(all 0.25s ease 0s)
+  .quote-request
+    a
+      display: block
+      text-decoration: none
+      color: #fff
+      padding: 10px
+      font-weight: bold
+      background-color: #F7A900
+      +border-radius(5px)
+      text-shadow: 0 1px 0 #000
+      box-shadow: 0px 1px 2px #999
+
+  .quote-request a:hover,
+  .send-a-file a:hover,
+  .contact-us a:hover
+    box-shadow: 0px 3px 5px #999
+
+  .social
+    a
+      &:hover
+        &.facebook,
+        &.twitter
+          background-position: 0 32px
+      +transition(all 0.2s ease-in-out)
+      &.facebook
+        background: url("images/facebook-icon.png")
+        width: 32px
+        height: 32px
+        display: block
+        text-indent: 9999px
+        overflow: hidden
+        float: left
+      &.twitter
+        background: url("images/twitter-icon.png")
+        width: 32px
+        height: 32px
+        display: block
+        text-indent: 9999px
+        overflow: hidden
+        float: left
+        margin-left: 5px
+
+  .contact-us
+    a
+      margin-left: 10px
+      display: block
+      text-decoration: none
+      color: #fff
+      padding: 10px
+      font-weight: bold
+      background-color: #999
+      +border-radius(5px)
+      text-shadow: 0 1px 0 #000
+      box-shadow: 0px 1px 2px #999
+
+  .email
+    margin-top: 7px
+    font-size: 18px
+    font-weight: normal
+    margin-left: 20px
+    a
+      color: #fff
+
+  .telephone
+    margin-top: 7px
+    font-size: 18px
+    font-weight: normal
+    color: #fff
+    text-shadow: 0 1px 0 #000
+    margin-left: 20px
+
+.tweet
+  .status-info
+    background-color: rgba(0,0,0,.1)
+    border-radius: 5px
+    display: inline-block
+    padding: 2px 8px
+
+.flexslider
+  height: 100vh
+  .item
+    height: 100vh
+    .flex-container
+      margin: 0 auto
+      position: relative
+      width: 95%
+      top: 50%
+      +transform(translateY(-50%))
+      text-align: center
+      h3
+        font-size: 4em
+        line-height: 50px
+        margin-bottom: 20px
+        font-weight: 300
+        text-align: center
+        opacity: 0
+        +transform(translateY(30px))
+        +transition(all 500ms ease-in-out 0s)
+      .slider-fadein
+        opacity: 1
+        +transform(translateY(0px))
+      p
+        font-size: 20px
+        line-height: 125%
+        margin: 0 auto 20px auto
+        width: 40%
+        text-align: center
+        opacity: 0
+        +transform(translateY(-30px))
+        +transition(all 500ms ease-in-out 0s)
+        a
+          color: #444
+      a
+        color: $white
+      .readmore
+        border: 2px solid #444
+        border-radius: 5px
+        display: inline-block
+        font-size: 20px
+        padding: 10px 20px
+        text-decoration: none
+        +transition(all 300ms ease-in-out 0s)
+        &:after
+          content: "\f105"
+          font-family: "fontawesome"
+          margin-left: 10px
+      &.light
+        h3
+          color: #fff
+          text-shadow: 0 1px 1px #000
+        p
+          color: #fff
+        .readmore
+          border: 2px solid #fff
+          color: #fff
+          &:hover
+            background-color: rgba(255,255,255,0.25)
+      &.dark
+        h3
+          color: #444
+          text-shadow: 0 1px 1px #fff
+        p
+          color: #444
+        .readmore
+          border: 2px solid #444
+          color: #444
+          &:hover
+            background-color: rgba(68,68,68,.75)
+            border: 2px solid rgba(68,68,68,.75)
+            color: #fff
+
+#video-banner
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  background-size: cover
+  height: 700px
+  width: 100%
+  overflow: hidden
+  position: relative
+
+  .video-wrap
+    video
+      position: absolute
+      top: -99999px
+      bottom: -99999px
+      left: -99999px
+      right: -99999px
+      margin: auto
+      min-height: 100%
+      min-width: 50%
+
+.section-portfolio
+  .portfolio-item
+    float: left
+    background-position: center center
+    background-size: cover
+    background-origin: border-box
+    background-repeat: no-repeat
+    &.zoom
+      +transition(all 0.25s ease-in-out 0s)
+      transition-delay: 0.1s
+
+  &.columns-2
+    .portfolio-item
+      width: 50%
+      height: 50vh
+
+  &.columns-3
+    .portfolio-item
+      width: 33.333333%
+      height: 35vh
+
+/* ==================================================
+/* Contact Section
+/* ==================================================
+
+.contact-form
+  h4
+    margin-bottom: 20px
+  h3
+    margin-bottom: 20px
+  .form-error
+    border: 1px solid #cc0000 !important
+    background-color: #fae5e5 !important
+    color: #cc0000 !important
+  .error-message
+    background-color: #cc0000
+    color: #fff
+    padding: 10px
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25)
+    margin-bottom: 20px
+  .alert-success
+    background-color: #dff0d8
+    padding: 20px
+    font-weight: bold
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25)
+    margin-bottom: 20px
+    p
+      color: #468847
+      margin: 0
+      padding: 0
+    h5
+      color: #468847
+      font-weight: bold
+      font-size: 20px
+      margin-bottom: 0
+  &.light
+    #contact-form
+      input,
+      textarea
+        border: rgba(255,255,255,0.15)
+        -webkit-box-shadow: none
+        -moz-box-shadow: none
+        box-shadow: none
+        background: $white
+        color: #999999
+        font-size: 16px
+        height: auto
+        padding: 15px
+        margin: 0
+        resize: none
+      input
+        width: 100%
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+      textarea
+        width: 100%
+        resize: vertical
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+      .submit
+        background: $magenta
+        color: $white
+        cursor: pointer
+        display: inline-block
+        font-size: 18px
+        font-weight: 500
+        padding: 16px 40px
+        text-align: center
+        vertical-align: middle
+        width: auto
+        margin-top: 30px
+        border: 0px
+        +transition(background 0.1s linear 0s, color 0.1s linear 0s)
+        &:hover
+          background: rgba(235, 44, 141, .8)
+          color: $white
+    #response
+      margin-top: 20px
+      color: $white
+  &.dark
+    #contact-form
+      input,
+      textarea
+        border: rgba(255,255,255,0.15)
+        -webkit-box-shadow: none
+        -moz-box-shadow: none
+        box-shadow: none
+        background: #26292E
+        color: $white
+        font-size: 16px
+        height: auto
+        padding: 15px
+        margin: 0
+        resize: none
+      input
+        width: 100%
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+      textarea
+        width: 100%
+        resize: vertical
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+      .submit
+        background: #3C3F45
+        color: #999999
+        cursor: pointer
+        display: inline-block
+        font-size: 18px
+        font-weight: 500
+        padding: 16px 40px
+        text-align: center
+        vertical-align: middle
+        width: auto
+        margin-top: 30px
+        border: 0px
+        +transition(background 0.1s linear 0s, color 0.1s linear 0s)
+        &:hover
+          background: $magenta
+          color: $white
+    #response
+      margin-top: 20px
+      color: $white

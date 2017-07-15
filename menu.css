@@ -1,0 +1,179 @@
+/*
+pink:   #E6007E rgba(230, 0, 126, 1)
+orange: #E94E1B rgba(233, 78, 27, 1)
+yellow: #F7A600 rgba(247, 166, 0, 1)
+brown:  #936037 rgba(147, 96, 55, 1)
+black:  #1D1D1B rgba(29, 29, 27, 1)
+*/
+
+.menu {
+  visibility: hidden;
+  transition: all 0.25s ease-in-out 0s;
+  opacity: 0;
+  height: 0;
+  background-color: #E6007E;
+  position: relative;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.menu.expanded {
+  visibility: visible;
+  opacity: 0.9;
+  height: 100%;
+}
+
+.menu ul {
+  width: 35%;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.menu ul li {
+  display: block;
+}
+
+.menu ul li a {
+  font-size: 3.5em;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.25);
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  display: block;
+  transition: all 0.25s ease-in-out 0s;
+  transition-delay: 0.15s;
+}
+
+.menu.expanded ul li a {
+  padding: 20px 0;
+}
+
+.menu .telephone .email,
+.menu .telephone .phone {
+  padding: 40px 0 0 0;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.25rem;
+  opacity: .75;
+}
+
+.menu ul li.social.icons a {
+  display: inline-block;
+  border: none;
+  margin: 0 30px;
+  opacity: .75;
+}
+
+.menu-button {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  z-index: 999;
+  transition: all 0.15s ease-in-out 0s;
+}
+
+.header-fade .menu-button {
+  top: 3px;
+}
+
+button:focus { outline: 0; }
+
+.header-fade .menu-button .hamburger-inner,
+.header-fade .menu-button .hamburger-inner::before,
+.header-fade .menu-button .hamburger-inner::after {
+  background-color: #999;
+}
+
+.header-fade .menu-button .hamburger-label {
+  color: #999;
+}
+
+.header-fade .menu-button.is-active .hamburger-label {
+  color: #fff;
+}
+
+.header-fade .menu-button.is-active .hamburger-inner,
+.header-fade .menu-button.is-active .hamburger-inner::before,
+.header-fade .menu-button.is-active .hamburger-inner::after {
+  background-color: #fff;
+}
+
+/* tablet */
+@media only screen
+  and (min-width : 768px)
+  and (max-width : 1024px) {
+
+    .menu ul {
+      width: 50%;
+  }
+
+    .menu ul li a {
+    font-size: 2rem;
+    padding: 15px 0;
+  }
+
+    .menu .telephone .email,
+    .menu .telephone .phone,
+    .menu .telephone a {
+      font-size: 20px !important;
+    }
+
+}
+
+/* smartphone */
+@media only screen and (max-width : 767px) {
+
+  .header-fade .menu-button,
+  .menu-button {
+    top: 12px;
+  }
+
+  .menu ul {
+    width: 85%;
+  }
+
+  .menu ul li a {
+    font-size: 1.5em;
+    padding: 5px 0;
+  }
+
+  .menu.expanded ul li a {
+    padding: 15px 0;
+  }
+
+
+  .menu .telephone .phone {
+  padding: 0;
+}
+
+
+  .menu .telephone span.phone,
+  .menu .telephone span.email {
+  display: block;
+}
+
+  .menu .telephone span.phone {
+    padding-top: 10px;
+  }
+
+  .menu .telephone a {
+    font-size: 1.5em;
+  }
+
+  .menu ul li.social.icons {
+  display: block;
+}
+
+  .menu ul li.social.icons a {
+  margin: 0 20px;
+}
+
+}

@@ -1,0 +1,285 @@
+/* mobile */
+@media only screen and (max-width : 767px)
+  body
+    font-size: 14px
+
+  .hamburger-label
+    display: none
+
+  .entry
+    .col-6
+      margin-bottom: 20px
+
+  .flexslider
+    .item
+      background-attachment: inherit !important
+      .flex-container
+        width: 95%
+        h3
+          font-size: 30px
+          font-weight: 300
+          line-height: 125%
+          margin: 0 0 20px
+          text-shadow: 0 1px 1px $white
+        p
+          font-size: 20px
+          line-height: 125%
+          margin-bottom: 40px
+          width: 95%
+  .button
+    a
+      font-size: 1rem
+      padding: 8px 15px
+
+  header
+    position: fixed
+    height: 70px
+    #action
+      top: 23px
+      right: 67px
+      .email
+        margin-top: 7px
+        font-size: 16px
+        font-weight: normal
+        margin-left: 20px
+        display: none
+    #headercontainer
+      height: 70px
+      overflow: auto
+      position: relative
+      #logo
+        height: 55px
+        left: 5px
+        position: absolute
+        top: 7px
+        width: 74px
+        background-size: 74px 55px
+        transition: none
+        svg
+          width: 70px
+          height: 52px
+        p
+          font-size: 12px
+          text-align: right
+      #action
+        .phonenumber
+          color: $white
+          font-size: 20px
+          margin: 5px 0
+          padding: 0
+          text-align: right
+
+    &.header-fade
+      height: 70px
+      #headercontainer
+        #logo
+          height: 55px
+          left: 5px
+          position: absolute
+          top: 7px
+          width: 74px
+          background-size: 74px 55px
+          transition: none
+          svg
+            width: 70px
+            height: auto
+        #action
+          top: 23px
+          right: 67px
+          .phonenumber
+            color: #999999
+
+  section
+    h1
+      font-size: 2.75em
+    h2
+      font-size: 2.5em
+    h3
+      font-size: 1.75em
+    h4
+      font-size: 1.25em
+    &.who-we-are
+      background: none
+      padding-bottom: 0px
+      padding-top: 60px
+    &.full-page
+      background-attachment: inherit
+      .container
+        h2
+          font-size: 1.5em
+          padding: 10px
+    &.banner-design
+      background: $light-grey url(/userfiles/image/banners/banner-donuts.jpg)
+      background-position: center !important
+      background-attachment: inherit
+      background-size: cover
+      .banner-intro
+        margin-top: 0px !important
+        +transform(translateY(-60%))
+        h1
+          font-size: 2.75em
+        img
+          width: 75%
+          max-width: 75%
+      .arrow
+        bottom: 15%
+    .row
+      .container
+        width: 90%
+        padding: 20px 0
+        p
+          font-size: 1.25em
+    .layout
+      .col-12
+        margin-top: 20px
+        img
+          width: 100%
+          padding: 0
+        &.col2
+          img
+            width: 100%
+        &.col3
+          img
+            width: 100%
+
+
+    &.background-attachment-fixed
+      background-attachment: scroll !important
+    &#entry,
+    &#portfolio
+      padding-top: 90px
+
+  #serviceswrapper,
+  #bannerwrapper,
+  .flex-direction-nav,
+  .and,
+  .separator
+    display: none
+
+  #service-print
+    -webkit-background-size: cover
+    background-attachment: scroll
+
+  .pagewidth,
+  #navcontainer
+    width: 98%
+  #banner
+    width: 100%
+
+  .slides_container
+    height: 300px
+    overflow: hidden
+    position: relative
+    width: 100%
+
+  footer
+    width: 100%
+    .container
+      width: 98%
+      p
+        font-size: 1em
+
+  #home
+    .testimonial
+      float: none
+      margin: 0
+      width: 100%
+      box-sizing: border-box
+      padding: 10px 5px
+    .testimonial-wrap
+      .twitter
+        border-left: none
+        float: none
+        padding: 10px 5px
+        width: 100%
+        box-sizing: border-box
+
+  .logo
+    display: block
+    text-align: center
+
+  #contactForm
+    p
+      float: none !important
+      width: 100%
+
+  .entry p,
+  .service p
+    font-size: 1em
+
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12
+    float: none
+    width: 100%
+
+  img
+    max-width: 100%
+
+  .top
+    bottom: 10px
+    font-size: 2em
+    line-height: 10px
+    padding: 5px 10px 10px
+    right: -50px
+    +border-radius(3px)
+    &.top-fade
+      right: 10px
+
+  .service
+    .col-3
+      float: left
+      width: 40%
+    .col-9
+      float: left
+      width: 60%
+
+  #top
+    height: 0px
+
+  .email,
+  .tel
+    display: block
+
+  #service-print .col-6,
+  #service-design .col-6
+    margin-bottom: 20px
+
+  #service-print .col-6:before,
+  #service-print .col-6:after,
+  #service-design .col-6:before,
+  #service-design .col-6:after
+    content: " "
+    display: table
+    clear: both
+
+  .service
+    padding-top: 60px
+
+  .arrow
+    bottom: 5%
+
+/* iPhone 5 */
+@media only screen and (width : 320px)
+  section
+    &.portfolio
+      ul
+        li
+          width: 50% !important
+          height: 160px !important
+
+/* iPhone 6/7 */
+@media only screen and (width : 375px)
+  section
+    &.portfolio
+      ul
+        li
+          width: 50% !important
+          height: 188px !important
+
+/* iPhone 6/7 Plus */
+@media only screen and (width : 414px)
+  section
+    &.portfolio
+      ul
+        li
+          width: 50% !important
+          height: 207px !important
